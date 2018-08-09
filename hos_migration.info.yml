@@ -1,0 +1,5 @@
+name: 'HOS Migration'
+type: module
+description: 'Migrates HOS d7 content to d8'
+core: 8.x
+package: 'hos'

@@ -1,0 +1,6 @@
+<?php
+function hos_migration_uninstall() {
+  print("Remove migration configs\n");
+  $configFactory = Drupal::service('config.factory');
+  $configFactory->getEditable('migrate_plus.migration.message_archives')->delete();
+}

@@ -1,0 +1,39 @@
+id: message_archives
+label: Migrates achived messages from d7 to content type message achives
+migration_group: hos
+migration_dependencies: {}
+source:
+  plugin: hos_message_archives
+destination:
+  plugin: entity:node
+process:
+  field_client_id: uid
+  uid:
+    plugin: default_value
+    default_value: 1
+  title:
+    plugin: hos_message_text
+    source: message_text
+  #field_sent_message_id‎: sent_message_id
+  'field_post': nid
+  field_time_queued: timestamp_when_queued
+  created: timestamp_when_sent
+  #field_sms_provider_session_id: sms_provider_session_id
+  bundle:
+    plugin: default_value
+    default_value: sms_text_message
+  type:
+    plugin: default_value
+    default_value: sms_text_message
+  langcode:
+    plugin: default_value
+    default_value: en
+  status:
+    plugin: default_value
+    default_value: 0
+  promote:
+    plugin: default_value
+    default_value: 0
+  sticky:
+    plugin: default_value
+    default_value: 0

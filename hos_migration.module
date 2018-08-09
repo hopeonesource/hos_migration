@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains hos_migration.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function hos_migration_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the hos_migration module.
+    case 'help.page.hos_migration':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Migrates HOS d7 content to d8') . '</p>';
+      return $output;
+
+    default:
+  }
+}
